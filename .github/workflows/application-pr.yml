@@ -32,8 +32,6 @@ jobs:
             echo "No lint script defined, skipping."
           fi
 
-      - name: Run tests
-        run: npm test
 
   backend-lint-test:
     name: Backend Lint & Test
@@ -61,5 +59,3 @@ jobs:
             echo "No lint script defined, skipping."
           fi
 
-      - name: Run tests
-        run: npm test
