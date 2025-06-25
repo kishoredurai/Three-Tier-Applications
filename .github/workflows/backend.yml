@@ -1,0 +1,20 @@
+name: Backend CI
+
+on:
+  push:
+    paths:
+      - 'Application/backend/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build Docker image
+        run: |
+          docker build -t backend-app:latest Application/backend 

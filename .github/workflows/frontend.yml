@@ -1,0 +1,39 @@
+name: Frontend CI
+
+on:
+  push:
+    paths:
+      - 'Application/frontend/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: Application/frontend
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Initialize npm (if needed)
+        run: |
+          if [ ! -f package.json ]; then
+            npm init -y
+          fi
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build
+        run: npm run build
+
+      - name: Upload production build as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: frontend-build
+          path: Application/frontend/build 
