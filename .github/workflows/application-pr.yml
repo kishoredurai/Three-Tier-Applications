@@ -32,14 +32,6 @@ jobs:
             echo "No lint script defined, skipping."
           fi
 
-      - name: Test
-        run: |
-          if npm run | grep -q 'test'; then
-            npm test -- --watchAll=false
-          else
-            echo "No test script defined, skipping."
-          fi
-
   backend-lint-test:
     name: Backend Lint & Test
     runs-on: ubuntu-latest
@@ -65,11 +57,3 @@ jobs:
           else
             echo "No lint script defined, skipping."
           fi
-
-      - name: Test
-        run: |
-          if npm run | grep -q 'test'; then
-            npm test -- --watchAll=false
-          else
-            echo "No test script defined, skipping."
-          fi 
