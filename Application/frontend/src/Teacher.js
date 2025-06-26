@@ -1,6 +1,6 @@
 // Teacher.js
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import './Teacher.css';
 
@@ -18,12 +18,12 @@ function Teacher() {
 
   const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 
-  const getData = () => {
+  const getData = useCallback(() => {
     fetch(`${API_BASE_URL}/teacher`)
       .then((res) => res.json())
       .then((data) => setData(data))
       .catch((err) => console.log(err));
-  };
+  }, [API_BASE_URL]);
 
   useEffect(() => { getData(); }, [getData]);
 
