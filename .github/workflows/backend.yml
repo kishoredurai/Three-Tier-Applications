@@ -2,7 +2,8 @@ name: Backend CI
 
 permissions:
     packages: write
-
+    id-token: write
+    
 on:
   push:
     branches:
