@@ -17,7 +17,7 @@
     return (
       <div className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-br from-orange-100 to-blue-100 animate-fade-in">
         <div className="mb-12">
-          <h1 className="text-5xl font-extrabold uppercase mb-6 text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-blue-600 animate-pulse drop-shadow-lg">Welcome to Student-Teacher Portal</h1>
+          <h1 className="text-5xl font-extrabold uppercase mb-6 text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-blue-600 animate-pulse drop-shadow-lg">Welcome to Demo Application Portal</h1>
           <p className="text-lg text-gray-700 font-medium animate-fade-in-slow">Select your role to get started</p>
         </div>
         <div className="w-full max-w-xs">
