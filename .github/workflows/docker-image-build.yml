@@ -31,7 +31,7 @@ jobs:
           context: ./Application/frontend
           file: ./Application/frontend/Dockerfile
           push: true
-          tags: ghcr.io/${{ github.repository }}/frontend:${{ github.GITHUB_RUN_NUMBER }}
+          tags: ghcr.io/${{ github.repository }}/frontend:${{ github.run_number }}
 
       - name: Build and push backend image
         uses: docker/build-push-action@v5
@@ -39,4 +39,4 @@ jobs:
           context: ./Application/backend
           file: ./Application/backend/Dockerfile
           push: true
-          tags: ghcr.io/${{ github.repository }}/backend:${{ github.GITHUB_RUN_NUMBER }}
+          tags: ghcr.io/${{ github.repository }}/backend:${{ github.run_number }}
